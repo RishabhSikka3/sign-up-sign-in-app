@@ -70,7 +70,7 @@
 // export default LoginForm;
 
 // src/components/auth/LoginForm.tsx
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Input from "../shared/Input";
 import Button from "../shared/Button";
@@ -83,10 +83,18 @@ const LoginForm: React.FC = () => {
   const dispatch = useDispatch(); // Now using the typed version from 'src/hooks.ts'
   const navigate = useNavigate();
 
+  // Select isAuthenticated from the state
+  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate("/dashboard");
+    }
+  }, [isAuthenticated, navigate]);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     dispatch(performLogin({ email, password }));
-    navigate("/dashboard");
   };
 
   const error = useSelector((state) => state.auth.error); // Using the typed useSelector

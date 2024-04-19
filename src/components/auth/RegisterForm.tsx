@@ -63,7 +63,7 @@
 // export default RegisterForm;
 
 // src/components/auth/RegisterForm.tsx
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Input from "../shared/Input";
 import Button from "../shared/Button";
@@ -75,12 +75,20 @@ const RegisterForm: React.FC = () => {
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const error = useSelector((state: any) => state.auth.error);
+
+  // Assuming your state has a boolean `isRegistered` to indicate successful registration
+  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+  const error = useSelector((state) => state.auth.error);
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate("/dashboard");
+    }
+  }, [isAuthenticated, navigate]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     dispatch(performRegistration({ email, password }));
-    navigate("/dashboard"); // Redirect on successful registration (you may want to check for actual success if needed).
   };
 
   return (
