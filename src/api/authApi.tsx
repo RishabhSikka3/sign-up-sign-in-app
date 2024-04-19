@@ -14,7 +14,7 @@ export interface RegisterRequest {
 }
 
 export interface ErrorResponse {
-  error: string; // Define the structure of error response here
+  error: string;
 }
 
 export interface AuthResponse {

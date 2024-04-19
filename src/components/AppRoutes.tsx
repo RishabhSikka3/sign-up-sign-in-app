@@ -4,7 +4,6 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import LoginForm from "./auth/LoginForm";
 import RegisterForm from "./auth/RegisterForm";
 import Dashboard from "./dashboard/Dashboard";
-import LandingPage from "./LandingPage";
 import ProtectedRoute from "../middleware/ProtectedRoute";
 
 const AppRoutes: React.FC = () => {
