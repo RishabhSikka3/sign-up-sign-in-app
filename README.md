@@ -1,46 +1,47 @@
-# Getting Started with Create React App
+# Sign-In/Sign-Up Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a full-featured sign-in and sign-up application built with React.js, TypeScript, and Redux.js for state management. It features a sleek interface powered by Tailwind CSS and includes reusable HTTP services for user authentication against the ReqRes REST API.
 
-## Available Scripts
+## Live Demo
 
-In the project directory, you can run:
+Check out the live application here: [Sign-Up/Sign-In App](https://sign-up-sign-in-app.vercel.app/)
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **User Authentication**: Utilizes the ReqRes API for user authentication, ensuring that only existing users can register or sign in.
+- **Protected Routes**: Includes middleware to protect the dashboard page, making it accessible only to authenticated users.
+- **Modern Design**: Styled using Tailwind CSS for a responsive and modern user interface.
+- **Reusable Services**: Features reusable HTTP services for interaction with the backend API.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Built With
+**React.js** - A JavaScript library for building user interfaces.
+**TypeScript** - An open-source language which builds on JavaScript by adding static type definitions.
+**Redux.js** - A predictable state container for JavaScript apps.
+**Tailwind CSS** - A utility-first CSS framework for rapidly building custom designs.
+**ReqRes** - A hosted REST-API ready to respond to your AJAX requests.
 
-### `npm test`
+## Pages
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Sign In Page**: Allows users to log in with existing credentials.
+- **Sign Up Page**: Enables new users to create an account, provided they are recognized by the ReqRes API.
+- **Dashboard Page**: A protected route that displays user-specific data post-authentication.
 
-### `npm run build`
+## Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Ensure you have `node` and `npm` installed on your machine.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Installation
 
-### `npm run eject`
+Clone the repository and navigate to the project directory:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+git clone https://github.com/RishabhSikka3/sign-up-sign-in-app.git
+cd sign-in-sign-up-app
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Install the necessary packages: npm install
+Start the development server: npm start
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
